@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy-950: #070b12;
+  --color-navy-900: #0b111c;
+  --color-navy-800: #111827;
+  --color-navy-700: #182030;
+  --color-navy-600: #243044;
+  --color-gold-400: #9a8450;
+  --color-gold-500: #857347;
+  --color-slate-150: #e8ecf2;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-source-serif), Georgia, "Times New Roman", serif;
+  --font-family-display: var(--font-display);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-navy-950);
+  color: #b6c2d1;
+  font-family: var(--font-sans);
+  font-feature-settings: "kern" 1, "liga" 1;
+}
+
+::selection {
+  background-color: color-mix(in srgb, var(--color-gold-400) 25%, transparent);
+  color: white;
+}
+
+.section-container {
+  @apply mx-auto w-full max-w-[68rem] px-6 lg:px-12;
+}
+
+.section-label {
+  @apply mb-3 text-[10px] font-semibold uppercase tracking-[0.28em] text-gold-400/90;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  @apply text-[1.75rem] font-normal tracking-[-0.01em] text-white md:text-[2rem] md:leading-[1.2];
+}
+
+.section-heading-block {
+  @apply mb-14 border-b border-white/8 pb-8;
+}
+
+.meta-text {
+  @apply text-sm leading-[1.7] text-slate-500;
+}
+
+.prose-copy {
+  @apply text-[15px] leading-[1.8] text-slate-300/95;
+}
+
+.card-surface {
+  @apply border border-white/7 bg-navy-900/50;
+}
+
+.card-accent {
+  @apply border border-white/7 border-l border-l-gold-400/60 bg-navy-900/35;
+}
+
+.link-gold {
+  @apply text-slate-200 no-underline transition-colors duration-200 hover:text-white;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center border border-gold-400/45 bg-gold-400/5 px-5 py-2.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-gold-400 transition-colors duration-200 hover:border-gold-400/70 hover:bg-gold-400/10;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center border border-white/10 px-5 py-2.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-400 transition-colors duration-200 hover:border-white/20 hover:text-slate-200;
+}
+
+.credential-pill {
+  @apply inline-flex items-center border border-white/8 bg-white/[0.02] px-3 py-1.5 text-[10px] uppercase tracking-[0.16em] text-slate-500;
+}
+
+.nav-link {
+  @apply text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-500 transition-colors duration-200 hover:text-white;
+}
+
+.row-link {
+  @apply transition-colors duration-200 hover:bg-white/[0.015];
+}
+
+/* Subtle scroll reveal only */
+.reveal {
+  opacity: 0;
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.reveal-fade-up {
+  transform: translateY(14px);
+}
+
+.reveal-fade-left {
+  transform: translateX(-14px);
+}
+
+.reveal-fade-right {
+  transform: translateX(14px);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
