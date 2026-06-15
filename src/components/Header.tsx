@@ -3,6 +3,29 @@
 import { useEffect, useState } from "react";
 import { navLinks, siteConfig } from "@/data/portfolio";
 
+function ScrollProgress() {
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const el = document.documentElement;
+      const scrolled = el.scrollTop;
+      const max = el.scrollHeight - el.clientHeight;
+      setProgress(max > 0 ? scrolled / max : 0);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  return (
+    <div
+      className="scroll-progress"
+      style={{ transform: `scaleX(${progress})` }}
+      aria-hidden="true"
+    />
+  );
+}
+
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -25,10 +48,11 @@ export function Header() {
     <header
       className={`fixed inset-x-0 top-0 z-50 border-b transition-colors duration-300 ${
         scrolled
-          ? "border-white/8 bg-navy-950/96 backdrop-blur-sm"
-          : "border-white/5 bg-navy-950/90 backdrop-blur-sm"
+          ? "border-white/[0.07] bg-navy-950/96 backdrop-blur-sm"
+          : "border-white/[0.04] bg-navy-950/90 backdrop-blur-sm"
       }`}
     >
+      <ScrollProgress />
       <div className="section-container flex h-16 items-center justify-between lg:h-[4.5rem]">
         <a
           href="#top"

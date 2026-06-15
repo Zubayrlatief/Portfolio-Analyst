@@ -5,44 +5,51 @@ import { SectionHeading } from "@/components/SectionHeading";
 
 export function Work() {
   return (
-    <section id="work" className="border-t border-white/8 py-20 lg:py-24">
+    <section id="work" className="section-divider py-20 lg:py-28">
       <div className="section-container">
         <SectionHeading
           number="03"
           label="Projects"
           title="Systems & client delivery"
-          description="Selected production platforms delivered through Zar Media Group across accounting, compliance, governance, and logistics."
+          description="Production platforms built for accounting, compliance, governance, and financial services firms — demonstrating practical exposure to regulated financial workflows."
         />
 
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid gap-5 md:grid-cols-2">
           {projects.map((project, index) => (
             <Reveal key={project.name} animation="fade-up" delay={index * 80}>
               <a
                 href={project.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group block overflow-hidden border border-white/8 bg-navy-900/35 transition-colors duration-200 hover:border-white/14 hover:bg-navy-900/50"
+                className="project-card group block"
               >
                 <ProjectPreview project={project} />
 
                 <div className="p-6 md:p-7">
                   <div className="flex items-start justify-between gap-4">
                     <div>
-                      <p className="text-[10px] font-semibold tracking-[0.18em] text-slate-600">
+                      <p className="font-[family-name:var(--font-display)] text-[11px] text-slate-700">
                         {String(index + 1).padStart(2, "0")}
                       </p>
-                      <h3 className="mt-2 font-[family-name:var(--font-display)] text-xl font-normal text-white">
+                      <h3 className="mt-2 font-[family-name:var(--font-display)] text-[1.2rem] font-normal leading-[1.2] text-white">
                         {project.name}
                       </h3>
                     </div>
-                    <span className="shrink-0 text-[10px] uppercase tracking-[0.16em] text-slate-500 transition-colors duration-200 group-hover:text-gold-400/90">
+                    <span className="shrink-0 text-[10px] uppercase tracking-[0.16em] text-slate-600 transition-colors duration-200 group-hover:text-gold-300">
                       View →
                     </span>
                   </div>
 
-                  <p className="prose-copy mt-4">{project.description}</p>
+                  <p className="prose-copy mt-4 text-[14px]">{project.description}</p>
 
-                  <div className="mt-5 flex flex-wrap gap-2">
+                  {project.relevance && (
+                    <p className="mt-3 flex items-center gap-2 text-[11px] text-slate-700">
+                      <span className="h-px w-3 bg-gold-400/30" />
+                      {project.relevance}
+                    </p>
+                  )}
+
+                  <div className="mt-5 flex flex-wrap gap-1.5">
                     {project.tags.map((tag) => (
                       <span
                         key={tag}

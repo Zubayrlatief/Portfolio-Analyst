@@ -4,13 +4,13 @@ import { SectionHeading } from "@/components/SectionHeading";
 
 export function Contact() {
   return (
-    <section id="contact" className="border-t border-white/8 py-20 lg:py-24">
+    <section id="contact" className="section-divider py-20 lg:py-28">
       <div className="section-container">
         <SectionHeading
           number="07"
           label="Contact"
           title="Professional enquiries"
-          description="Open to analyst and associate opportunities in asset management and financial operations."
+          description="Open to analyst and associate opportunities in investment banking, wealth management, and asset management."
         />
 
         <Reveal animation="fade-up">
@@ -60,8 +60,9 @@ export function Contact() {
             <div className="flex flex-col justify-center p-8">
               <p className="prose-copy">
                 Based in {siteConfig.location}. Available for discussions regarding
-                analyst roles, operational reporting, and teams requiring analytical
-                discipline with practical systems awareness.
+                analyst and associate opportunities in investment banking, wealth
+                management, and asset management — particularly roles centred on
+                financial data analysis, reporting, and structured decision support.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <a href={siteConfig.cvPath} className="btn-primary">

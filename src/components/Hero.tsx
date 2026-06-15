@@ -1,34 +1,43 @@
-import { siteConfig } from "@/data/portfolio";
+import { siteConfig, heroStats } from "@/data/portfolio";
 import { ProfileImage } from "@/components/ProfileImage";
 
 export function Hero() {
   return (
     <section
       id="top"
-      className="border-b border-white/8 pt-28 pb-16 lg:pt-36 lg:pb-20"
+      className="border-b border-white/[0.07] pt-28 pb-0 lg:pt-36"
     >
       <div className="section-container">
-        <div className="grid items-start gap-12 lg:grid-cols-[minmax(0,1fr)_300px] lg:gap-16">
-          <div className="max-w-2xl">
-            <p className="section-label">Asset Management · Analyst</p>
+        {/* Main hero grid */}
+        <div className="grid items-start gap-12 pb-16 lg:grid-cols-[minmax(0,1fr)_280px] lg:gap-20 lg:pb-20">
+          {/* Left — identity */}
+          <div className="max-w-[38rem]">
+            <p className="hero-label section-label">
+              {siteConfig.sector}
+            </p>
 
-            <h1 className="font-[family-name:var(--font-display)] text-[2.5rem] font-normal leading-[1.1] tracking-[-0.02em] text-white md:text-[3rem]">
+            <h1 className="hero-name font-[family-name:var(--font-display)] text-[2.6rem] font-normal leading-[1.07] tracking-[-0.025em] text-white md:text-[3.2rem]">
               {siteConfig.name}
             </h1>
 
-            <p className="mt-5 text-lg text-slate-200 md:text-xl">
+            <div className="hero-rule mt-5 h-px w-12 bg-gold-400/50" />
+
+            <p className="hero-sub mt-5 text-[17px] font-light text-slate-300 md:text-[19px]">
               {siteConfig.title}
             </p>
 
-            <div className="mt-6 flex flex-wrap gap-2">
+            <div className="hero-pills mt-5 flex flex-wrap gap-2">
               <span className="credential-pill">{siteConfig.currentRole}</span>
               <span className="credential-pill">{siteConfig.credentials}</span>
+              <span className="credential-pill">{siteConfig.location}</span>
             </div>
 
-            <p className="prose-copy mt-8 max-w-xl">{siteConfig.tagline}</p>
+            <p className="hero-body prose-copy mt-7 max-w-[34rem]">
+              {siteConfig.tagline}
+            </p>
 
-            <div className="mt-10 flex flex-wrap gap-3 border-t border-white/8 pt-8">
-              <a href={siteConfig.cvPath} className="btn-primary">
+            <div className="hero-ctas mt-9 flex flex-wrap gap-3 border-t border-white/[0.07] pt-7">
+              <a href={siteConfig.cvPath} download className="btn-primary">
                 Download CV
               </a>
               <a
@@ -40,14 +49,32 @@ export function Hero() {
                 LinkedIn
               </a>
               <a href={`mailto:${siteConfig.email}`} className="btn-secondary">
-                Email
+                Contact
               </a>
             </div>
           </div>
 
-          <div className="lg:justify-self-end">
+          {/* Right — photo */}
+          <div className="hero-photo lg:justify-self-end">
             <ProfileImage />
           </div>
+        </div>
+
+        {/* Stats bar — across the full width, pinned to bottom of hero */}
+        <div className="grid grid-cols-2 border-t border-white/[0.07] md:grid-cols-4">
+          {heroStats.map((stat, i) => (
+            <div
+              key={stat.label}
+              className={`hero-stat-${i} stat-card`}
+            >
+              <p className="font-[family-name:var(--font-display)] text-[1.65rem] font-normal leading-none text-white md:text-[1.9rem]">
+                {stat.value}
+              </p>
+              <p className="mt-2 text-[11px] leading-[1.5] text-slate-600">
+                {stat.label}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
