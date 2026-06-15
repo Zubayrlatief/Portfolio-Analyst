@@ -37,8 +37,8 @@ export function Hero() {
             </p>
 
             <div className="hero-ctas mt-9 flex flex-wrap gap-3 border-t border-white/[0.07] pt-7">
-              <a href={siteConfig.cvPath} download className="btn-primary">
-                Download CV
+              <a href="/cv.html" target="_blank" rel="noopener noreferrer" className="btn-primary">
+                View CV
               </a>
               <a
                 href={siteConfig.linkedin}

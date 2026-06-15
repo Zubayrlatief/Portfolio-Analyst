@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zubayr Abdullatif — CV 2026</title>
+  <style>
+    /* ── Reset ─────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ── Fonts ─────────────────────────────────────────────── */
+    @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Inter:wght@300;400;500;600&display=swap');
+
+    /* ── Tokens ────────────────────────────────────────────── */
+    :root {
+      --gold:      #8c7a4a;
+      --gold-lt:   #a89460;
+      --ink:       #0f1621;
+      --ink-mid:   #2a3548;
+      --ink-soft:  #5a6a7a;
+      --ink-mute:  #8a9aaa;
+      --rule:      #dde3ec;
+      --bg:        #ffffff;
+      --bg-tint:   #f8f9fb;
+      --serif:     'EB Garamond', Georgia, serif;
+      --sans:      'Inter', system-ui, sans-serif;
+      --page-w:    820px;
+    }
+
+    /* ── Page shell ────────────────────────────────────────── */
+    html { background: #e8ecf0; }
+
+    body {
+      font-family: var(--sans);
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--ink);
+      background: var(--bg);
+      max-width: var(--page-w);
+      margin: 2.5rem auto;
+      padding: 0;
+      box-shadow: 0 4px 40px rgba(0,0,0,0.12);
+    }
+
+    /* ── Print button (screen only) ────────────────────────── */
+    .print-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 1.5rem;
+      background: var(--ink);
+      color: #a8b8c8;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+    }
+
+    .print-bar strong { color: #ffffff; }
+
+    .print-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.4rem 1rem;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold-lt);
+      border: 1px solid rgba(140,122,74,0.5);
+      background: rgba(140,122,74,0.06);
+      cursor: pointer;
+      font-family: var(--sans);
+      transition: border-color 0.15s, background 0.15s;
+    }
+
+    .print-btn:hover {
+      border-color: rgba(140,122,74,0.8);
+      background: rgba(140,122,74,0.1);
+    }
+
+    /* ── Document body ─────────────────────────────────────── */
+    .doc {
+      padding: 3.5rem 3.75rem;
+    }
+
+    /* ── Header ────────────────────────────────────────────── */
+    .cv-header {
+      border-bottom: 1.5px solid var(--gold);
+      padding-bottom: 1.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .cv-name {
+      font-family: var(--serif);
+      font-size: 2.4rem;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      line-height: 1.05;
+      color: var(--ink);
+    }
+
+    .cv-title {
+      margin-top: 0.45rem;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: var(--ink-mid);
+    }
+
+    .cv-sector {
+      margin-top: 0.25rem;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      color: var(--gold);
+      text-transform: uppercase;
+    }
+
+    .cv-contact {
+      margin-top: 1.1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.25rem 1.5rem;
+      font-size: 12px;
+      color: var(--ink-soft);
+    }
+
+    .cv-contact a {
+      color: var(--ink-soft);
+      text-decoration: none;
+    }
+
+    .cv-contact a:hover { color: var(--gold); }
+
+    .cv-contact .sep { color: var(--rule); }
+
+    /* ── Sections ──────────────────────────────────────────── */
+    .section {
+      margin-bottom: 2.25rem;
+    }
+
+    .section-title {
+      font-size: 9.5px;
+      font-weight: 600;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 0.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    /* ── Summary ───────────────────────────────────────────── */
+    .summary p {
+      font-size: 14px;
+      line-height: 1.8;
+      color: var(--ink-mid);
+    }
+
+    /* ── Experience ────────────────────────────────────────── */
+    .exp-item {
+      margin-bottom: 1.75rem;
+      padding-bottom: 1.75rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .exp-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+
+    .exp-header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: baseline;
+      gap: 1rem;
+    }
+
+    .exp-role {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: var(--ink);
+    }
+
+    .exp-period {
+      font-size: 11px;
+      color: var(--ink-soft);
+      white-space: nowrap;
+      letter-spacing: 0.02em;
+    }
+
+    .exp-company {
+      margin-top: 0.2rem;
+      font-size: 12.5px;
+      font-weight: 500;
+      color: var(--ink-mid);
+    }
+
+    .exp-sector {
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+      margin-top: 0.1rem;
+    }
+
+    .exp-highlights {
+      margin-top: 0.75rem;
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .exp-highlights li {
+      display: flex;
+      gap: 0.75rem;
+      font-size: 13px;
+      line-height: 1.75;
+      color: var(--ink-mid);
+      margin-bottom: 0.35rem;
+    }
+
+    .exp-highlights li::before {
+      content: "–";
+      color: var(--gold);
+      flex-shrink: 0;
+      margin-top: 0.05em;
+    }
+
+    /* ── Skills ────────────────────────────────────────────── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem 2rem;
+    }
+
+    .skill-group-label {
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      margin-bottom: 0.45rem;
+    }
+
+    .skill-group-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem 0.5rem;
+    }
+
+    .skill-chip {
+      display: inline-block;
+      font-size: 12px;
+      color: var(--ink-mid);
+      background: var(--bg-tint);
+      border: 1px solid var(--rule);
+      padding: 0.2rem 0.6rem;
+      line-height: 1.5;
+    }
+
+    .skill-chip.primary {
+      background: rgba(140,122,74,0.06);
+      border-color: rgba(140,122,74,0.25);
+      color: var(--ink);
+    }
+
+    /* ── Education ─────────────────────────────────────────── */
+    .edu-item {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 0.5rem 1rem;
+      margin-bottom: 1.1rem;
+      padding-bottom: 1.1rem;
+      border-bottom: 1px solid var(--rule);
+      align-items: start;
+    }
+
+    .edu-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+
+    .edu-qual {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: var(--ink);
+    }
+
+    .edu-inst {
+      font-size: 12.5px;
+      color: var(--ink-mid);
+      margin-top: 0.15rem;
+    }
+
+    .edu-detail {
+      font-size: 12px;
+      color: var(--ink-soft);
+      margin-top: 0.2rem;
+    }
+
+    .edu-period {
+      font-size: 11px;
+      color: var(--ink-soft);
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    /* ── Additional ────────────────────────────────────────── */
+    .add-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .add-item .add-role {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    .add-item .add-co {
+      font-size: 12px;
+      color: var(--ink-soft);
+      margin-top: 0.1rem;
+    }
+
+    .add-item .add-period {
+      font-size: 11px;
+      color: var(--ink-mute);
+      margin-top: 0.1rem;
+    }
+
+    .add-item .add-note {
+      font-size: 12px;
+      color: var(--ink-soft);
+      margin-top: 0.4rem;
+      line-height: 1.6;
+    }
+
+    /* ── Footer note ───────────────────────────────────────── */
+    .cv-footer {
+      margin-top: 2.5rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--rule);
+      font-size: 10.5px;
+      color: var(--ink-mute);
+      line-height: 1.6;
+    }
+
+    /* ── Print ─────────────────────────────────────────────── */
+    @media print {
+      html { background: white; }
+
+      body {
+        max-width: 100%;
+        margin: 0;
+        box-shadow: none;
+        font-size: 12.5px;
+      }
+
+      .print-bar { display: none; }
+
+      .doc { padding: 2.5rem 3rem; }
+
+      .exp-item, .edu-item { page-break-inside: avoid; }
+
+      .section { page-break-inside: avoid; }
+    }
+
+    @page {
+      size: A4;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Screen-only toolbar -->
+  <div class="print-bar">
+    <span><strong>Zubayr Abdullatif</strong> — CV 2026 &nbsp;·&nbsp; Financial Analyst</span>
+    <button class="print-btn" onclick="window.print()">⬇ Save as PDF</button>
+  </div>
+
+  <div class="doc">
+
+    <!-- ── HEADER ─────────────────────────────────────────── -->
+    <header class="cv-header">
+      <h1 class="cv-name">Zubayr Abdullatif</h1>
+      <p class="cv-title">Financial Analyst · Data &amp; Operations</p>
+      <p class="cv-sector">Investment Banking · Wealth Management · Asset Management</p>
+      <div class="cv-contact">
+        <a href="mailto:business.zubayr@gmail.com">business.zubayr@gmail.com</a>
+        <span class="sep">|</span>
+        <a href="tel:+27685070088">068 507 0088</a>
+        <span class="sep">|</span>
+        <a href="https://www.linkedin.com/in/zubayrlatief" target="_blank">linkedin.com/in/zubayrlatief</a>
+        <span class="sep">|</span>
+        <span>Cape Town, South Africa</span>
+      </div>
+    </header>
+
+    <!-- ── PROFESSIONAL SUMMARY ───────────────────────────── -->
+    <section class="section summary">
+      <h2 class="section-title">Professional Summary</h2>
+      <p>
+        Results-driven financial analyst based in Cape Town with active roles in commodity trading
+        analytics at SA Bullion — South Africa's leading gold and precious metals dealer — and prior
+        financial data analysis at O'Brien Financial, a regulated short-term insurance and financial
+        services firm. Core function: transforming raw financial and operational data into
+        decision-ready reporting for management.
+      </p>
+      <p style="margin-top:0.7rem;">
+        Quantitative toolkit spans advanced Excel modelling (VBA, macros, pivot tables), Power BI
+        data visualisation, Python scripting, and SQL. In parallel, delivers fintech client portals
+        and compliance systems through Zar Media Group for SAICA-registered accounting and professional
+        services firms — providing direct operational exposure to regulated financial workflows.
+        Completing a BCom in Information and Technology Management at MANCOSA with formal modules in
+        Statistics, Microeconomics, and quantitative analysis.
+      </p>
+    </section>
+
+    <!-- ── EXPERIENCE ─────────────────────────────────────── -->
+    <section class="section">
+      <h2 class="section-title">Experience</h2>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <h3 class="exp-role">Analyst</h3>
+          <span class="exp-period">Nov 2025 – Present</span>
+        </div>
+        <p class="exp-company">SA Bullion &nbsp;·&nbsp; Cape Town, On-site</p>
+        <p class="exp-sector">Precious Metals · Commodity Trading · Financial Analytics</p>
+        <ul class="exp-highlights">
+          <li>Produce structured reporting on precious metals inventory positions — tracking stock levels, movements, and discrepancies within South Africa's leading gold and bullion trading firm</li>
+          <li>Validate and reconcile commodity datasets using advanced Excel (pivot tables, macros, VLOOKUP/INDEX-MATCH) to ensure reporting accuracy and decision-grade data quality</li>
+          <li>Deliver management-ready dashboards and visualisations supporting inventory planning, operational reconciliation, and senior-level review cycles</li>
+          <li>Identify and resolve data discrepancies ahead of reporting deadlines, materially improving the accuracy and reliability of management information</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <h3 class="exp-role">Data Analyst</h3>
+          <span class="exp-period">Jun 2025 – Nov 2025</span>
+        </div>
+        <p class="exp-company">O'Brien Financial &nbsp;·&nbsp; Cape Town, On-site</p>
+        <p class="exp-sector">Financial Services · Short-Term Insurance · Regulated Environment</p>
+        <ul class="exp-highlights">
+          <li>Delivered financial data analysis within a regulated short-term insurance and financial services environment — maintaining data accuracy and regulatory compliance throughout</li>
+          <li>Extracted, cleaned, and modelled client financial datasets in Excel; built Power BI visualisations used by senior advisors in client settlement discussions</li>
+          <li>Managed client financial cases from data intake through to resolved claim outcomes, ensuring auditability and data integrity at each stage</li>
+          <li>Redesigned manual data workflows, reducing processing time and improving analytical throughput for the advisory team</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <h3 class="exp-role">Software Developer</h3>
+          <span class="exp-period">Feb 2025 – Present</span>
+        </div>
+        <p class="exp-company">Zar Media Group &nbsp;·&nbsp; Cape Town, Part-time</p>
+        <p class="exp-sector">Fintech · Financial Systems · Professional Services</p>
+        <ul class="exp-highlights">
+          <li>Architect and deploy client portals and financial reporting systems for SAICA-registered accounting firms and regulated professional services businesses in the South African market</li>
+          <li>Delivered a governance and compliance infrastructure platform (Integrity Architecture) — enforcing audit trails, consent workflows, and accountability structures used by financial and corporate clients</li>
+          <li>Built production-grade financial document management systems and client reporting portals currently serving active firms in regulated South African markets</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <h3 class="exp-role">Full Stack Developer</h3>
+          <span class="exp-period">Sep 2024 – Jun 2025</span>
+        </div>
+        <p class="exp-company">LC Studio &nbsp;·&nbsp; Western Cape, Internship</p>
+        <p class="exp-sector">Technology · Data Engineering · Agile</p>
+        <ul class="exp-highlights">
+          <li>Built data extraction pipelines, logistics analytics platforms, and operational reporting systems in an Agile/Scrum product team</li>
+          <li>Developed structured data tools — inventory tracking, supply-chain management systems — using TypeScript, Python, SQL, and Node.js</li>
+          <li>Delivered live monitoring platforms and reporting tooling across sprint cycles</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ── SKILLS ──────────────────────────────────────────── -->
+    <section class="section">
+      <h2 class="section-title">Analytical Skills &amp; Tools</h2>
+      <div class="skills-grid">
+        <div>
+          <p class="skill-group-label">Financial Analysis</p>
+          <div class="skill-group-items">
+            <span class="skill-chip primary">Financial Data Reconciliation</span>
+            <span class="skill-chip primary">Management Reporting</span>
+            <span class="skill-chip primary">Quantitative Analysis</span>
+            <span class="skill-chip primary">Inventory &amp; Position Tracking</span>
+            <span class="skill-chip primary">Statistical Analysis</span>
+          </div>
+        </div>
+        <div>
+          <p class="skill-group-label">Analytical Tools</p>
+          <div class="skill-group-items">
+            <span class="skill-chip primary">Microsoft Excel — Advanced (VBA, Macros, Pivot Tables)</span>
+            <span class="skill-chip primary">Power BI</span>
+            <span class="skill-chip primary">Python</span>
+            <span class="skill-chip primary">SQL</span>
+          </div>
+        </div>
+        <div>
+          <p class="skill-group-label">Financial Systems</p>
+          <div class="skill-group-items">
+            <span class="skill-chip">Financial Client Portals</span>
+            <span class="skill-chip">Compliance &amp; Audit Workflows</span>
+            <span class="skill-chip">Accounting Systems</span>
+            <span class="skill-chip">API &amp; Database Architecture</span>
+          </div>
+        </div>
+        <div>
+          <p class="skill-group-label">Soft Skills &amp; Commercial</p>
+          <div class="skill-group-items">
+            <span class="skill-chip">Analytical Thinking</span>
+            <span class="skill-chip">Structured Problem-Solving</span>
+            <span class="skill-chip">Commercial Awareness</span>
+            <span class="skill-chip">Stakeholder Communication</span>
+            <span class="skill-chip">Attention to Detail</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── EDUCATION ───────────────────────────────────────── -->
+    <section class="section">
+      <h2 class="section-title">Education</h2>
+
+      <div class="edu-item">
+        <div>
+          <p class="edu-qual">BCom Information and Technology Management</p>
+          <p class="edu-inst">MANCOSA</p>
+          <p class="edu-detail">In progress · Modules: Statistics, Microeconomics, Java Programming · Quantitative &amp; commercial foundation</p>
+        </div>
+        <span class="edu-period">2025 – 2027</span>
+      </div>
+
+      <div class="edu-item">
+        <div>
+          <p class="edu-qual">Full Stack Development</p>
+          <p class="edu-inst">Life Choices Academy</p>
+          <p class="edu-detail">Full-stack engineering · Vue.js, Node.js, SQL, Agile/Scrum methodology</p>
+        </div>
+        <span class="edu-period">Apr – Sep 2024</span>
+      </div>
+
+      <div class="edu-item">
+        <div>
+          <p class="edu-qual">National Senior Certificate (Matric)</p>
+          <p class="edu-inst">Claremont High School</p>
+          <p class="edu-detail">Pure Mathematics · Physical Science · English HL</p>
+        </div>
+        <span class="edu-period">2019 – 2023</span>
+      </div>
+    </section>
+
+    <!-- ── ADDITIONAL EXPERIENCE ──────────────────────────── -->
+    <section class="section">
+      <h2 class="section-title">Additional Experience</h2>
+      <div class="add-grid">
+        <div class="add-item">
+          <p class="add-role">Surf Coach</p>
+          <p class="add-co">Surf Emporium Muizenberg</p>
+          <p class="add-period">Apr 2023 – Jul 2025</p>
+          <p class="add-note">Delivered instruction to international clients across skill levels; built long-term client relationships through structured communication and service excellence.</p>
+        </div>
+        <div class="add-item">
+          <p class="add-role">Business Owner</p>
+          <p class="add-co">The Car Bath</p>
+          <p class="add-period">Apr – Dec 2022</p>
+          <p class="add-note">Founded and operated a customer-facing business while in secondary school — managing marketing, scheduling, financial oversight, and customer acquisition.</p>
+        </div>
+        <div class="add-item">
+          <p class="add-role">Assistant Mechanic</p>
+          <p class="add-co">KC Auto Kenilworth</p>
+          <p class="add-period">Jan – Aug 2021</p>
+          <p class="add-note">Supported daily workshop operations; developed process-oriented work ethic and disciplined approach to task completion.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FOOTER ──────────────────────────────────────────── */
+    <footer class="cv-footer">
+      References available on request. Portfolio and project documentation: zubayrlatief.com
+    </footer>
+
+  </div><!-- /.doc -->
+
+</body>
+</html>
