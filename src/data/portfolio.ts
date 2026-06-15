@@ -11,7 +11,7 @@ export const siteConfig = {
   phone: "068 507 0088",
   phoneHref: "tel:+27685070088",
   linkedin: "https://www.linkedin.com/in/zubayrlatief",
-  cvPath: "/Zubayr-Abdullatif-CV-2026.pdf",
+  cvPath: "/cv.html",
   disclaimer:
     "Views expressed on this site are my own and do not constitute investment advice. Past work and project descriptions are for illustrative purposes only.",
 };

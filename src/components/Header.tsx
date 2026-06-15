@@ -73,7 +73,12 @@ export function Header() {
               {link.label}
             </a>
           ))}
-          <a href={siteConfig.cvPath} className="btn-primary px-4 py-2">
+          <a
+            href={siteConfig.cvPath}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary px-4 py-2"
+          >
             CV
           </a>
         </nav>
@@ -112,10 +117,12 @@ export function Header() {
             ))}
             <a
               href={siteConfig.cvPath}
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-primary mt-2 w-fit"
               onClick={() => setMenuOpen(false)}
             >
-              Download CV
+              View CV
             </a>
           </nav>
         </div>

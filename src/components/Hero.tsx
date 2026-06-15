@@ -9,7 +9,7 @@ export function Hero() {
     >
       <div className="section-container">
         {/* Main hero grid */}
-        <div className="grid items-start gap-12 pb-16 lg:grid-cols-[minmax(0,1fr)_280px] lg:gap-20 lg:pb-20">
+        <div className="grid items-start gap-12 pb-16 lg:grid-cols-[minmax(0,1fr)_340px] lg:gap-20 lg:pb-20">
           {/* Left — identity */}
           <div className="max-w-[38rem]">
             <p className="hero-label section-label">
@@ -37,7 +37,7 @@ export function Hero() {
             </p>
 
             <div className="hero-ctas mt-9 flex flex-wrap gap-3 border-t border-white/[0.07] pt-7">
-              <a href="/cv.html" target="_blank" rel="noopener noreferrer" className="btn-primary">
+              <a href={siteConfig.cvPath} target="_blank" rel="noopener noreferrer" className="btn-primary">
                 View CV
               </a>
               <a

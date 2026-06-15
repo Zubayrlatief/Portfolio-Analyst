@@ -65,7 +65,7 @@ export function Contact() {
                 financial data analysis, reporting, and structured decision support.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <a href="/cv.html" target="_blank" rel="noopener noreferrer" className="btn-primary">
+                <a href={siteConfig.cvPath} target="_blank" rel="noopener noreferrer" className="btn-primary">
                   View CV
                 </a>
                 <a href={`mailto:${siteConfig.email}`} className="btn-secondary">
