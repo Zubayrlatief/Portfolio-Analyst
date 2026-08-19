@@ -10,7 +10,7 @@ export function About() {
           number="01"
           label="Profile"
           title="Professional summary"
-          description="Financial analysis and data operations — with direct exposure to commodity trading, regulated financial services, and fintech systems."
+          description="Founder and commercial operator — selling B2B SaaS across the compliance, accounting, and financial services sectors, with hands-on delivery behind every deal."
         />
 
         {/* Narrative paragraphs */}

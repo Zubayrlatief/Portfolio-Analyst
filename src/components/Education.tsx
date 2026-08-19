@@ -10,7 +10,7 @@ export function EducationSection() {
           number="05"
           label="Education"
           title="Academic record"
-          description="Quantitative and commercial foundations for a career in finance and analysis."
+          description="Commercial and technical foundations for a career in technology sales."
         />
 
         <div className="divide-y divide-white/[0.07] border-y border-white/[0.07]">

@@ -10,7 +10,7 @@ export function Contact() {
           number="07"
           label="Contact"
           title="Professional enquiries"
-          description="Open to analyst and associate opportunities in investment banking, wealth management, and asset management."
+          description="Open to high-ticket technology sales roles — B2B SaaS, fintech, and enterprise software."
         />
 
         <Reveal animation="fade-up">
@@ -60,9 +60,10 @@ export function Contact() {
             <div className="flex flex-col justify-center p-8">
               <p className="prose-copy">
                 Based in {siteConfig.location}. Available for discussions regarding
-                analyst and associate opportunities in investment banking, wealth
-                management, and asset management — particularly roles centred on
-                financial data analysis, reporting, and structured decision support.
+                high-ticket technology sales roles — B2B SaaS, fintech, and
+                enterprise software — particularly roles where technical
+                credibility, consultative selling, and full-cycle deal ownership
+                are what close business.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <a href={siteConfig.cvPath} target="_blank" rel="noopener noreferrer" className="btn-primary">

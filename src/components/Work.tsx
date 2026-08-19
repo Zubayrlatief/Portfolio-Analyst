@@ -11,7 +11,7 @@ export function Work() {
           number="03"
           label="Projects"
           title="Systems & client delivery"
-          description="Production platforms built for accounting, compliance, governance, and financial services firms — demonstrating practical exposure to regulated financial workflows."
+          description="Production platforms built and sold to accounting, compliance, governance, and financial services firms — the products behind the sales track record."
         />
 
         <div className="grid gap-5 md:grid-cols-2">

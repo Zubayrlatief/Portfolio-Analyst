@@ -12,8 +12,8 @@ export function Skills() {
         <SectionHeading
           number="04"
           label="Capabilities"
-          title="Analytical toolkit"
-          description="Core competencies for investment banking, asset management, and wealth management analysis roles."
+          title="Commercial & technical toolkit"
+          description="Core competencies for B2B SaaS and technology sales roles — backed by hands-on technical delivery."
         />
 
         {/* Primary — finance and analytical tools */}
@@ -65,11 +65,11 @@ export function Skills() {
         {/* Reporting samples placeholder */}
         <Reveal animation="fade-up" className="mt-12">
           <div className="border border-dashed border-white/[0.08] p-8 text-center">
-            <p className="eyebrow">Reporting samples</p>
+            <p className="eyebrow">Work samples</p>
             <p className="prose-copy mx-auto mt-3 max-w-md text-slate-600">
-              Excel dashboards, Power BI reports, and reconciliation frameworks —
-              samples available on request. Structured outputs from SA Bullion
-              and O&rsquo;Brien Financial available upon enquiry.
+              Product demos, client portals, and campaign creatives — samples
+              available on request. Live platforms are linked in the Projects
+              section above.
             </p>
           </div>
         </Reveal>
