@@ -3,7 +3,7 @@ import { siteConfig } from "@/data/portfolio";
 
 export function ProfileImage() {
   return (
-    <figure className="w-full max-w-[280px] lg:max-w-[300px]">
+    <figure className="w-full max-w-[320px] lg:max-w-[340px]">
       <div className="relative aspect-[4/5] overflow-hidden border border-white/10 bg-navy-800">
         <Image
           src="/images/headshot.png"
@@ -11,7 +11,7 @@ export function ProfileImage() {
           fill
           priority
           className="object-cover object-[center_14%] grayscale-[0.85]"
-          sizes="(max-width: 768px) 280px, 300px"
+          sizes="(max-width: 768px) 320px, 340px"
         />
       </div>
       <figcaption className="mt-4 border-t border-white/8 pt-4">

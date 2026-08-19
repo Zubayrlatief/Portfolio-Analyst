@@ -354,17 +354,31 @@
         padding: 0;
         box-shadow: none;
         font-size: 12px;
+        zoom: 0.92;
       }
 
       .doc {
-        padding: 2.4cm 2.2cm 2cm;
+        padding: 1.6cm 1.8cm 1.1cm;
       }
 
-      /* Keep experience items together */
+      .cv-header { padding-bottom: 1rem; margin-bottom: 1.1rem; }
+      .cv-name { font-size: 1.9rem; }
+      .section { margin-bottom: 1.3rem; }
+      .exp-item { margin-bottom: 0.9rem; padding-bottom: 0.9rem; }
+      .exp-bullets { margin-top: 0.45rem; }
+      .exp-bullets li { font-size: 11.5px; line-height: 1.55; margin-bottom: 0.2rem; }
+      .exp-role { font-size: 1.02rem; }
+      .summary p { font-size: 12px; line-height: 1.6; }
+      .skill-tag { font-size: 10.5px; }
+      .edu-row { margin-bottom: 0.6rem; padding-bottom: 0.6rem; }
+      .add-note { font-size: 11px; }
+      .cv-footer { margin-top: 0.8rem; padding-top: 0.6rem; }
+
+      /* Keep individual entries together; let long sections flow across pages */
       .exp-item  { page-break-inside: avoid; }
       .edu-row   { page-break-inside: avoid; }
       .add-grid  { page-break-inside: avoid; }
-      .section   { page-break-inside: avoid; }
+      .section-title { page-break-after: avoid; }
 
       /* Ensure colors print */
       .section-title { color: #7a6a3e !important; }
@@ -387,7 +401,7 @@
 
   <!-- ── Toolbar (hidden when printing) ─────────────────── -->
   <div class="toolbar">
-    <span><strong>Zubayr Abdullatif</strong> &nbsp;·&nbsp; Financial Analyst CV 2026</span>
+    <span><strong>Zubayr Abdullatif</strong> &nbsp;·&nbsp; Tech Sales CV 2026</span>
     <div style="display:flex;align-items:center;gap:1.5rem;">
       <span class="toolbar-hint">Chrome/Edge: Ctrl+P → Save as PDF → A4 → Background graphics ✓</span>
       <button class="print-btn" onclick="window.print()">Print / Save PDF</button>
@@ -399,8 +413,8 @@
     <!-- ── HEADER ─────────────────────────────────────────── -->
     <header class="cv-header">
       <h1 class="cv-name">Zubayr Abdullatif</h1>
-      <p class="cv-title">Financial Analyst &nbsp;·&nbsp; Data &amp; Operations</p>
-      <p class="cv-sector">Investment Banking &nbsp;·&nbsp; Wealth Management &nbsp;·&nbsp; Asset Management</p>
+      <p class="cv-title">Founder &nbsp;·&nbsp; B2B SaaS &amp; Technology Sales</p>
+      <p class="cv-sector">High-Ticket Sales &nbsp;·&nbsp; B2B SaaS &nbsp;·&nbsp; Fintech &amp; Compliance Solutions</p>
       <div class="cv-contact">
         <a href="mailto:business.zubayr@gmail.com">business.zubayr@gmail.com</a>
         <span class="sep">|</span>
@@ -417,13 +431,31 @@
     <!-- ── PROFESSIONAL SUMMARY ───────────────────────────── -->
     <section class="section summary">
       <h2 class="section-title">Professional Summary</h2>
-      <p>Results-driven financial analyst based in Cape Town with active roles in commodity trading analytics at SA Bullion — South Africa's leading gold and precious metals dealer — and prior financial data analysis at O'Brien Financial, a regulated short-term insurance and financial services firm. Core function: transforming raw financial and operational data into decision-ready reporting for management.</p>
-      <p>Quantitative toolkit spans advanced Excel modelling (VBA, macros, pivot tables), Power BI data visualisation, Python scripting, and SQL. In parallel, delivers fintech client portals and compliance systems through Zar Media Group for SAICA-registered accounting and professional services firms — providing direct operational exposure to regulated financial workflows. Completing a BCom in Information and Technology Management at MANCOSA with formal modules in Statistics, Microeconomics, and quantitative analysis.</p>
+      <p>Founder and commercial operator based in Cape Town, running Zar Media Group — a software business selling B2B SaaS to local and international clients in the compliance, accounting, and financial services sectors. Comfortable owning the full sales cycle: prospecting, high-level discovery meetings, product demonstrations, negotiation, and close — with the technical depth to speak credibly to both commercial stakeholders and engineering teams.</p>
+      <p>Proven operator beyond the deal: has shipped dozens of client projects end-to-end, run marketing with weekly ad creative production, and built secure Azure cloud infrastructure to automate business processes. Analyst roles at SA Bullion and O'Brien Financial add direct exposure to client-facing reporting and regulated financial environments. Completing a BCom in Information and Technology Management at MANCOSA.</p>
     </section>
 
     <!-- ── EXPERIENCE ─────────────────────────────────────── -->
     <section class="section">
       <h2 class="section-title">Experience</h2>
+
+      <div class="exp-item">
+        <div class="exp-row">
+          <h3 class="exp-role">Founder</h3>
+          <span class="exp-period">Feb 2025 – Present</span>
+        </div>
+        <p class="exp-company">Zar Media Group &nbsp;·&nbsp; Cape Town</p>
+        <p class="exp-sector">B2B SaaS · Fintech · Compliance &amp; Professional Services</p>
+        <ul class="exp-bullets">
+          <li>Sold B2B SaaS internationally and locally — representing the company in high-level sales meetings and owning discovery, product demonstrations, and negotiation through to close</li>
+          <li>Developed and commercialised independent software products for the compliance, accounting, and financial sectors, taking each from concept through to paying clients</li>
+          <li>Shipped dozens of client projects end-to-end while managing client expectations, scope, and delivery timelines from kickoff to handover</li>
+          <li>Ran the marketing function, producing weekly ad creatives that sustained audience engagement and fed the sales pipeline</li>
+          <li>Provisioned and administered Azure virtual private servers to manage and automate core business processes, cutting manual operational overhead</li>
+          <li>Architected fully secure, cloud-based project environments to mitigate the risk of sensitive document leakage for clients in regulated industries</li>
+          <li>Delivered a governance and compliance infrastructure platform (Integrity Architecture) — enforcing audit trails, consent workflows, and accountability structures for financial and corporate clients</li>
+        </ul>
+      </div>
 
       <div class="exp-item">
         <div class="exp-row">
@@ -436,7 +468,6 @@
           <li>Produce structured reporting on precious metals inventory positions — tracking stock levels, movements, and discrepancies within South Africa's leading gold and bullion trading firm</li>
           <li>Validate and reconcile commodity datasets using advanced Excel (pivot tables, macros, VLOOKUP/INDEX-MATCH) to ensure reporting accuracy and decision-grade data quality</li>
           <li>Deliver management-ready dashboards and visualisations supporting inventory planning, operational reconciliation, and senior-level review cycles</li>
-          <li>Identify and resolve data discrepancies ahead of reporting deadlines, improving the accuracy and reliability of management information</li>
         </ul>
       </div>
 
@@ -451,21 +482,6 @@
           <li>Delivered financial data analysis within a regulated short-term insurance and financial services environment — maintaining data accuracy and regulatory compliance throughout</li>
           <li>Extracted, cleaned, and modelled client financial datasets in Excel; built Power BI visualisations used by senior advisors in client settlement discussions</li>
           <li>Managed client financial cases from data intake through to resolved claim outcomes, ensuring auditability and data integrity at each stage</li>
-          <li>Redesigned manual data workflows, reducing processing time and improving analytical throughput for the advisory team</li>
-        </ul>
-      </div>
-
-      <div class="exp-item">
-        <div class="exp-row">
-          <h3 class="exp-role">Software Developer</h3>
-          <span class="exp-period">Feb 2025 – Present</span>
-        </div>
-        <p class="exp-company">Zar Media Group &nbsp;·&nbsp; Cape Town, Part-time</p>
-        <p class="exp-sector">Fintech · Financial Systems · Professional Services</p>
-        <ul class="exp-bullets">
-          <li>Architect and deploy client portals and financial reporting systems for SAICA-registered accounting firms and regulated professional services businesses</li>
-          <li>Delivered a governance and compliance infrastructure platform (Integrity Architecture) — enforcing audit trails, consent workflows, and accountability structures for financial and corporate clients</li>
-          <li>Built production-grade financial document management systems and client reporting portals currently serving active firms in regulated South African markets</li>
         </ul>
       </div>
 
@@ -486,44 +502,44 @@
 
     <!-- ── SKILLS ──────────────────────────────────────────── -->
     <section class="section">
-      <h2 class="section-title">Analytical Skills &amp; Tools</h2>
+      <h2 class="section-title">Commercial &amp; Technical Skills</h2>
       <div class="skills-grid">
         <div>
-          <p class="skill-label">Financial Analysis</p>
+          <p class="skill-label">Sales &amp; Commercial</p>
           <div class="skill-tags">
-            <span class="skill-tag hi">Financial Data Reconciliation</span>
-            <span class="skill-tag hi">Management Reporting</span>
-            <span class="skill-tag hi">Quantitative Analysis</span>
-            <span class="skill-tag hi">Inventory &amp; Position Tracking</span>
-            <span class="skill-tag hi">Statistical Analysis</span>
+            <span class="skill-tag hi">B2B SaaS Sales</span>
+            <span class="skill-tag hi">Consultative Selling</span>
+            <span class="skill-tag hi">Discovery &amp; Product Demos</span>
+            <span class="skill-tag hi">Negotiation &amp; Closing</span>
+            <span class="skill-tag hi">Client Relationship Management</span>
           </div>
         </div>
         <div>
-          <p class="skill-label">Analytical Tools</p>
+          <p class="skill-label">Marketing &amp; Growth</p>
           <div class="skill-tags">
-            <span class="skill-tag hi">Microsoft Excel Advanced (VBA, Macros, Pivot Tables)</span>
-            <span class="skill-tag hi">Power BI</span>
-            <span class="skill-tag hi">Python</span>
-            <span class="skill-tag hi">SQL</span>
+            <span class="skill-tag hi">Ad Creative Production</span>
+            <span class="skill-tag hi">Campaign Management</span>
+            <span class="skill-tag hi">Audience Engagement</span>
+            <span class="skill-tag hi">Lead Generation</span>
           </div>
         </div>
         <div>
-          <p class="skill-label">Financial Systems</p>
+          <p class="skill-label">Technical</p>
           <div class="skill-tags">
-            <span class="skill-tag">Financial Client Portals</span>
+            <span class="skill-tag">Azure Cloud Infrastructure</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">Power BI</span>
+            <span class="skill-tag">Advanced Excel</span>
+          </div>
+        </div>
+        <div>
+          <p class="skill-label">Delivery &amp; Operations</p>
+          <div class="skill-tags">
+            <span class="skill-tag">Project Delivery</span>
+            <span class="skill-tag">Client Expectation Management</span>
             <span class="skill-tag">Compliance &amp; Audit Workflows</span>
-            <span class="skill-tag">Accounting Systems</span>
-            <span class="skill-tag">API &amp; Database Architecture</span>
-          </div>
-        </div>
-        <div>
-          <p class="skill-label">Soft Skills &amp; Commercial</p>
-          <div class="skill-tags">
-            <span class="skill-tag">Analytical Thinking</span>
-            <span class="skill-tag">Structured Problem-Solving</span>
-            <span class="skill-tag">Commercial Awareness</span>
-            <span class="skill-tag">Stakeholder Communication</span>
-            <span class="skill-tag">Attention to Detail</span>
+            <span class="skill-tag">Process Automation</span>
           </div>
         </div>
       </div>
@@ -537,7 +553,7 @@
         <div>
           <p class="edu-qual">BCom Information and Technology Management</p>
           <p class="edu-inst">MANCOSA</p>
-          <p class="edu-detail">In progress &nbsp;·&nbsp; Statistics, Microeconomics, Java Programming &nbsp;·&nbsp; Quantitative &amp; commercial foundation</p>
+          <p class="edu-detail">In progress &nbsp;·&nbsp; Information systems, business management &amp; programming</p>
         </div>
         <span class="edu-period">2025 – 2027</span>
       </div>
