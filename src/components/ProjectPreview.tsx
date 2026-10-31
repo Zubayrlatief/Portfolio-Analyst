@@ -11,7 +11,7 @@ export function ProjectPreview({ project }: ProjectPreviewProps) {
 
   return (
     <div
-      className={`relative overflow-hidden border-b border-white/8 bg-navy-800 ${
+      className={`relative overflow-hidden border-b border-ink-900/10 bg-paper-300 ${
         isContain ? "aspect-[16/11]" : "aspect-[16/10]"
       }`}
     >
@@ -28,7 +28,7 @@ export function ProjectPreview({ project }: ProjectPreviewProps) {
       />
 
       {project.secondaryImage && (
-        <div className="absolute bottom-3 right-3 w-[42%] overflow-hidden border border-white/15 bg-navy-950 shadow-lg shadow-black/40">
+        <div className="absolute bottom-3 right-3 w-[42%] overflow-hidden bg-paper-50 p-1">
           <div className="relative aspect-[4/3]">
             <Image
               src={project.secondaryImage}
@@ -39,7 +39,7 @@ export function ProjectPreview({ project }: ProjectPreviewProps) {
             />
           </div>
           {project.secondaryLabel && (
-            <p className="border-t border-white/10 bg-navy-950/95 px-2 py-1 text-[9px] uppercase tracking-[0.14em] text-slate-500">
+            <p className="border-t border-ink-900/12 bg-paper-100/95 px-2 py-1 text-[9px] uppercase tracking-[0.14em] text-ink-500">
               {project.secondaryLabel}
             </p>
           )}

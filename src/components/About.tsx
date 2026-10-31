@@ -43,10 +43,10 @@ export function About() {
                 as="div"
               >
                 <div className="bring-card">
-                  <p className="text-[13px] font-medium text-slate-200">
+                  <p className="text-[13px] font-medium text-ink-800">
                     {item.label}
                   </p>
-                  <p className="mt-1.5 text-[12.5px] leading-[1.65] text-slate-600">
+                  <p className="mt-1.5 text-[12.5px] leading-[1.65] text-ink-400">
                     {item.detail}
                   </p>
                 </div>

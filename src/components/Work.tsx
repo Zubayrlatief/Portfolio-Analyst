@@ -28,14 +28,14 @@ export function Work() {
                 <div className="p-6 md:p-7">
                   <div className="flex items-start justify-between gap-4">
                     <div>
-                      <p className="font-[family-name:var(--font-display)] text-[11px] text-slate-700">
+                      <p className="font-[family-name:var(--font-display)] text-[11px] text-ink-400">
                         {String(index + 1).padStart(2, "0")}
                       </p>
-                      <h3 className="mt-2 font-[family-name:var(--font-display)] text-[1.2rem] font-normal leading-[1.2] text-white">
+                      <h3 className="mt-2 font-[family-name:var(--font-display)] text-[1.2rem] font-normal leading-[1.2] text-ink-900">
                         {project.name}
                       </h3>
                     </div>
-                    <span className="shrink-0 text-[10px] uppercase tracking-[0.16em] text-slate-600 transition-colors duration-200 group-hover:text-gold-300">
+                    <span className="shrink-0 text-[10px] uppercase tracking-[0.16em] text-ink-400 transition-colors duration-200 group-hover:text-gold-600">
                       View →
                     </span>
                   </div>
@@ -43,8 +43,8 @@ export function Work() {
                   <p className="prose-copy mt-4 text-[14px]">{project.description}</p>
 
                   {project.relevance && (
-                    <p className="mt-3 flex items-center gap-2 text-[11px] text-slate-700">
-                      <span className="h-px w-3 bg-gold-400/30" />
+                    <p className="mt-3 flex items-center gap-2 text-[11px] text-ink-400">
+                      <span className="h-px w-3 bg-gold-500/70" />
                       {project.relevance}
                     </p>
                   )}

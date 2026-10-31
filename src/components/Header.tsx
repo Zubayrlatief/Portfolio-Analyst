@@ -48,8 +48,8 @@ export function Header() {
     <header
       className={`fixed inset-x-0 top-0 z-50 border-b transition-colors duration-300 ${
         scrolled
-          ? "border-white/[0.07] bg-navy-950/96 backdrop-blur-sm"
-          : "border-white/[0.04] bg-navy-950/90 backdrop-blur-sm"
+          ? "border-ink-900/10 bg-paper-100"
+          : "border-ink-900/8 bg-paper-100"
       }`}
     >
       <ScrollProgress />
@@ -59,10 +59,10 @@ export function Header() {
           className="min-w-0"
           onClick={() => setMenuOpen(false)}
         >
-          <span className="block truncate font-[family-name:var(--font-display)] text-base text-white md:text-lg">
+          <span className="block truncate font-[family-name:var(--font-display)] text-base text-ink-900 md:text-lg">
             {siteConfig.name}
           </span>
-          <span className="mt-0.5 block truncate text-[10px] uppercase tracking-[0.18em] text-slate-500">
+          <span className="mt-0.5 block truncate text-[10px] uppercase tracking-[0.18em] text-ink-500">
             {siteConfig.title}
           </span>
         </a>
@@ -91,19 +91,19 @@ export function Header() {
           onClick={() => setMenuOpen((open) => !open)}
         >
           <span
-            className={`block h-px w-5 bg-white transition-transform duration-200 ${menuOpen ? "translate-y-[7px] rotate-45" : ""}`}
+            className={`block h-px w-5 bg-ink-900 transition-transform duration-200 ${menuOpen ? "translate-y-[7px] rotate-45" : ""}`}
           />
           <span
-            className={`block h-px w-5 bg-white transition-opacity duration-200 ${menuOpen ? "opacity-0" : ""}`}
+            className={`block h-px w-5 bg-ink-900 transition-opacity duration-200 ${menuOpen ? "opacity-0" : ""}`}
           />
           <span
-            className={`block h-px w-5 bg-white transition-transform duration-200 ${menuOpen ? "-translate-y-[7px] -rotate-45" : ""}`}
+            className={`block h-px w-5 bg-ink-900 transition-transform duration-200 ${menuOpen ? "-translate-y-[7px] -rotate-45" : ""}`}
           />
         </button>
       </div>
 
       {menuOpen && (
-        <div className="border-t border-white/8 bg-navy-950 lg:hidden">
+        <div className="border-t border-ink-900/10 bg-paper-100 lg:hidden">
           <nav className="section-container flex flex-col gap-4 py-6">
             {navLinks.map((link) => (
               <a

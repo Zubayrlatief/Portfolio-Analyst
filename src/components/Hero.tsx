@@ -5,7 +5,7 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="border-b border-white/[0.07] pt-28 pb-0 lg:pt-36"
+      className="border-b border-ink-900/10 pt-28 pb-0 lg:pt-36"
     >
       <div className="section-container">
         {/* Main hero grid */}
@@ -16,13 +16,13 @@ export function Hero() {
               {siteConfig.sector}
             </p>
 
-            <h1 className="hero-name font-[family-name:var(--font-display)] text-[2.6rem] font-normal leading-[1.07] tracking-[-0.025em] text-white md:text-[3.2rem]">
+            <h1 className="hero-name font-[family-name:var(--font-display)] text-[2.6rem] font-normal leading-[1.07] tracking-[-0.025em] text-ink-900 md:text-[3.2rem]">
               {siteConfig.name}
             </h1>
 
-            <div className="hero-rule mt-5 h-px w-12 bg-gold-400/50" />
+            <div className="hero-rule mt-5 h-px w-12 bg-gold-500/70" />
 
-            <p className="hero-sub mt-5 text-[17px] font-light text-slate-300 md:text-[19px]">
+            <p className="hero-sub mt-5 text-[17px] font-light text-ink-700 md:text-[19px]">
               {siteConfig.title}
             </p>
 
@@ -36,7 +36,7 @@ export function Hero() {
               {siteConfig.tagline}
             </p>
 
-            <div className="hero-ctas mt-9 flex flex-wrap gap-3 border-t border-white/[0.07] pt-7">
+            <div className="hero-ctas mt-9 flex flex-wrap gap-3 border-t border-ink-900/10 pt-7">
               <a href={siteConfig.cvPath} target="_blank" rel="noopener noreferrer" className="btn-primary">
                 View CV
               </a>
@@ -61,16 +61,16 @@ export function Hero() {
         </div>
 
         {/* Stats bar — across the full width, pinned to bottom of hero */}
-        <div className="grid grid-cols-2 border-t border-white/[0.07] md:grid-cols-4">
+        <div className="grid grid-cols-2 border-t border-ink-900/10 md:grid-cols-4">
           {heroStats.map((stat, i) => (
             <div
               key={stat.label}
               className={`hero-stat-${i} stat-card`}
             >
-              <p className="font-[family-name:var(--font-display)] text-[1.65rem] font-normal leading-none text-white md:text-[1.9rem]">
+              <p className="font-[family-name:var(--font-display)] text-[1.65rem] font-normal leading-none text-ink-900 md:text-[1.9rem]">
                 {stat.value}
               </p>
-              <p className="mt-2 text-[11px] leading-[1.5] text-slate-600">
+              <p className="mt-2 text-[11px] leading-[1.5] text-ink-400">
                 {stat.label}
               </p>
             </div>

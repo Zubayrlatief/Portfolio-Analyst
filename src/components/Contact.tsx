@@ -14,11 +14,11 @@ export function Contact() {
         />
 
         <Reveal animation="fade-up">
-          <div className="grid border border-white/8 md:grid-cols-2">
-            <div className="border-b border-white/8 p-8 md:border-b-0 md:border-r">
+          <div className="grid border border-ink-900/10 md:grid-cols-2">
+            <div className="border-b border-ink-900/10 p-8 md:border-b-0 md:border-r">
               <dl className="space-y-8">
                 <div>
-                  <dt className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-600">
+                  <dt className="text-[10px] font-semibold uppercase tracking-[0.2em] text-ink-400">
                     Email
                   </dt>
                   <dd className="mt-3">
@@ -29,7 +29,7 @@ export function Contact() {
                 </div>
 
                 <div>
-                  <dt className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-600">
+                  <dt className="text-[10px] font-semibold uppercase tracking-[0.2em] text-ink-400">
                     Phone
                   </dt>
                   <dd className="mt-3">
@@ -40,7 +40,7 @@ export function Contact() {
                 </div>
 
                 <div>
-                  <dt className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-600">
+                  <dt className="text-[10px] font-semibold uppercase tracking-[0.2em] text-ink-400">
                     LinkedIn
                   </dt>
                   <dd className="mt-3">

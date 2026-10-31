@@ -1,15 +1,24 @@
 @import "tailwindcss";
 
 @theme {
-  /* Deeper, more authoritative navy palette */
-  --color-navy-950: #05080f;
-  --color-navy-900: #090e18;
-  --color-navy-800: #0f1621;
-  --color-navy-700: #162030;
-  --color-navy-600: #1e2d42;
-  /* Restrained, institutional gold — not flashy */
-  --color-gold-400: #8c7a4a;
+  /* ── Ground: warm paper, the light counterpart to the old navy ── */
+  --color-paper-50: #fbfbfc;
+  --color-paper-100: #f3f4f6;
+  --color-paper-200: #eaecf0;
+  --color-paper-300: #e0e4ea;
+  --color-paper-400: #d2d7e0;
+  /* ── Ink: the navy, moved from the ground into the type ── */
+  --color-ink-900: #0b1320;
+  --color-ink-800: #142033;
+  --color-ink-700: #1f2d44;
+  --color-ink-600: #33425a;
+  --color-ink-500: #475770;
+  --color-ink-400: #4f5d76;
+  --color-ink-300: #78859b;
+  /* Institutional brass — raised in chroma so it still reads gold on a light ground */
+  --color-gold-600: #7d6219;
   --color-gold-500: #7a6a3e;
+  --color-gold-400: #8c7a4a;
   --color-gold-300: #a89460;
   /* Typography */
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
@@ -20,37 +29,51 @@
   --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
 }
 
+/* Semantic roles — one ground, one ink, one accent */
+:root {
+  --ground: var(--color-paper-100);
+  --surface: var(--color-paper-200);
+  --surface-strong: var(--color-paper-300);
+  --ink: var(--color-ink-900);
+  --ink-body: var(--color-ink-600);
+  --ink-soft: var(--color-ink-400);
+  --accent: var(--color-gold-500);
+  --rule: rgba(11, 19, 32, 0.1);
+  --rule-soft: rgba(11, 19, 32, 0.07);
+}
+
 /* ─── Base ─────────────────────────────────────────────────── */
 
 html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--ground);
 }
 
 body {
-  background-color: var(--color-navy-950);
-  color: #a8b8c8;
+  background-color: var(--ground);
+  color: var(--ink-body);
   font-family: var(--font-sans);
   font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
   line-height: 1.6;
 }
 
-/* Noise texture over background for depth */
+/* Paper grain over the ground for depth */
 body::after {
   content: "";
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.018;
+  opacity: 0.035;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
   background-size: 128px 128px;
 }
 
 ::selection {
-  background-color: color-mix(in srgb, var(--color-gold-400) 22%, transparent);
-  color: #e8d8b0;
+  background-color: color-mix(in srgb, var(--color-gold-400) 28%, transparent);
+  color: var(--color-ink-900);
 }
 
 /* ─── Layout ────────────────────────────────────────────────── */
@@ -63,64 +86,72 @@ body::after {
 
 .section-label {
   display: block;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.28em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: color-mix(in srgb, var(--color-gold-300) 80%, transparent);
+  color: var(--color-gold-600);
   margin-bottom: 0.75rem;
 }
 
 .section-title {
   font-family: var(--font-display);
-  font-size: clamp(1.6rem, 3vw, 2rem);
+  font-size: clamp(1.7rem, 3.1vw, 2.15rem);
   font-weight: 400;
   letter-spacing: -0.015em;
   line-height: 1.15;
-  color: #f0f4f8;
+  color: var(--ink);
 }
 
 .section-heading-block {
-  @apply mb-12 border-b border-white/[0.07] pb-8 lg:mb-16;
+  @apply mb-12 pb-8 lg:mb-16;
+  border-bottom: 1px solid var(--rule);
 }
 
 .meta-text {
-  font-size: 13px;
+  font-size: 13.5px;
   line-height: 1.7;
-  color: #5a6a7a;
+  color: var(--ink-soft);
 }
 
 .prose-copy {
-  font-size: 15px;
-  line-height: 1.85;
-  color: color-mix(in srgb, #a8b8c8 95%, transparent);
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--color-ink-700);
 }
 
 .eyebrow {
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #5a6a7a;
+  color: var(--ink-soft);
 }
 
 /* ─── Surface cards ─────────────────────────────────────────── */
+/* Surfaces are a step in tone, not an outline. */
 
 .card-surface {
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  background: rgba(9, 14, 24, 0.5);
+  border: 1px solid transparent;
+  background: var(--surface);
 }
 
 .card-accent {
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-left: 1px solid color-mix(in srgb, var(--color-gold-400) 55%, transparent);
-  background: rgba(140, 122, 74, 0.04);
+  border: 1px solid transparent;
+  border-left: 2px solid color-mix(in srgb, var(--accent) 70%, transparent);
+  background: color-mix(in srgb, var(--accent) 7%, var(--surface));
 }
 
 /* ─── Interactive elements ──────────────────────────────────── */
 
 .link-gold {
-  @apply text-slate-200 no-underline transition-colors duration-200 hover:text-white;
+  color: var(--color-ink-700);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.link-gold:hover {
+  color: var(--ink);
 }
 
 .btn-primary {
@@ -129,22 +160,22 @@ body::after {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.625rem 1.375rem;
-  font-size: 10px;
+  padding: 0.7rem 1.5rem;
+  font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--color-gold-300);
-  border: 1px solid color-mix(in srgb, var(--color-gold-400) 40%, transparent);
-  background: color-mix(in srgb, var(--color-gold-400) 5%, transparent);
+  color: var(--color-paper-50);
+  border: 1px solid var(--color-ink-800);
+  background: var(--color-ink-800);
   transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
   white-space: nowrap;
 }
 
 .btn-primary:hover {
-  border-color: color-mix(in srgb, var(--color-gold-400) 65%, transparent);
-  background: color-mix(in srgb, var(--color-gold-400) 9%, transparent);
-  color: color-mix(in srgb, var(--color-gold-300) 110%, white);
+  border-color: var(--color-gold-600);
+  background: var(--color-gold-600);
+  color: var(--color-paper-50);
 }
 
 .btn-secondary {
@@ -152,43 +183,43 @@ body::after {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.625rem 1.375rem;
-  font-size: 10px;
+  padding: 0.7rem 1.5rem;
+  font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #6a7a8a;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: transparent;
-  transition: border-color 0.2s ease, color 0.2s ease;
+  color: var(--color-ink-600);
+  border: 1px solid transparent;
+  background: var(--surface-strong);
+  transition: background 0.2s ease, color 0.2s ease;
   white-space: nowrap;
 }
 
 .btn-secondary:hover {
-  border-color: rgba(255, 255, 255, 0.16);
-  color: #d0dce8;
+  background: var(--color-paper-400);
+  color: var(--ink);
 }
 
 .credential-pill {
   display: inline-flex;
   align-items: center;
-  padding: 0.35rem 0.75rem;
-  font-size: 10px;
+  padding: 0.4rem 0.8rem;
+  font-size: 11px;
   font-weight: 500;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #5a6a7a;
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  background: rgba(255, 255, 255, 0.015);
+  color: var(--color-ink-500);
+  border: 1px solid transparent;
+  background: var(--surface-strong);
 }
 
 .nav-link {
   position: relative;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #4a5a6a;
+  color: var(--color-ink-500);
   transition: color 0.2s ease;
 }
 
@@ -199,14 +230,14 @@ body::after {
   left: 0;
   width: 100%;
   height: 1px;
-  background: var(--color-gold-300);
+  background: var(--accent);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.3s var(--ease-out-expo);
 }
 
 .nav-link:hover {
-  color: #c8d8e8;
+  color: var(--ink);
 }
 
 .nav-link:hover::after {
@@ -218,23 +249,19 @@ body::after {
 }
 
 .row-link:hover {
-  background: rgba(255, 255, 255, 0.012);
+  background: rgba(11, 19, 32, 0.035);
 }
 
 /* ─── Hero stat card ────────────────────────────────────────── */
 
 .stat-card {
-  border-right: 1px solid rgba(255, 255, 255, 0.06);
   padding: 1.5rem 1.25rem;
+  background: var(--surface);
   transition: background 0.3s ease;
 }
 
-.stat-card:last-child {
-  border-right: none;
-}
-
 .stat-card:hover {
-  background: rgba(140, 122, 74, 0.04);
+  background: color-mix(in srgb, var(--accent) 10%, var(--surface));
 }
 
 /* ─── Scroll reveal system ──────────────────────────────────── */
@@ -268,10 +295,10 @@ body::after {
   top: 0;
   left: 0;
   z-index: 60;
-  height: 1px;
+  height: 2px;
   width: 100%;
   transform-origin: left center;
-  background: linear-gradient(90deg, var(--color-gold-400), var(--color-gold-300));
+  background: var(--accent);
   transition: transform 0.1s linear;
 }
 
@@ -288,17 +315,17 @@ body::after {
   left: 0;
   top: 0;
   bottom: 0;
-  width: 1px;
-  background: color-mix(in srgb, var(--color-gold-400) 0%, transparent);
+  width: 2px;
+  background: transparent;
   transition: background 0.3s ease;
 }
 
 .experience-article:hover {
-  background: rgba(255, 255, 255, 0.01);
+  background: rgba(11, 19, 32, 0.03);
 }
 
 .experience-article:hover::before {
-  background: color-mix(in srgb, var(--color-gold-400) 50%, transparent);
+  background: var(--accent);
 }
 
 /* ─── Skill tag ─────────────────────────────────────────────── */
@@ -306,59 +333,55 @@ body::after {
 .skill-tag {
   display: inline-flex;
   align-items: center;
-  padding: 0.4rem 0.85rem;
-  font-size: 12px;
-  color: #7a8a9a;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  background: rgba(255, 255, 255, 0.02);
-  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+  padding: 0.45rem 0.9rem;
+  font-size: 13px;
+  color: var(--color-ink-600);
+  border: 1px solid transparent;
+  background: var(--surface-strong);
+  transition: color 0.2s ease, background 0.2s ease;
   white-space: nowrap;
 }
 
 .skill-tag:hover {
-  border-color: color-mix(in srgb, var(--color-gold-400) 35%, transparent);
-  color: #c8d4dc;
-  background: color-mix(in srgb, var(--color-gold-400) 5%, transparent);
+  color: var(--ink);
+  background: color-mix(in srgb, var(--accent) 16%, var(--surface-strong));
 }
 
 .skill-tag-primary {
-  color: #96a4b0;
-  border-color: rgba(255, 255, 255, 0.08);
-  background: rgba(255, 255, 255, 0.025);
+  color: var(--color-ink-700);
+  background: var(--color-paper-400);
 }
 
 /* ─── Section dividers ──────────────────────────────────────── */
 
 .section-divider {
-  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  border-top: 1px solid var(--rule);
 }
 
 /* ─── What I bring grid ─────────────────────────────────────── */
 
 .bring-card {
-  padding: 1.25rem 1.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  background: rgba(255, 255, 255, 0.015);
-  transition: border-color 0.25s ease, background 0.25s ease;
+  padding: 1.35rem 1.5rem;
+  border: 1px solid transparent;
+  background: var(--surface);
+  transition: background 0.25s ease;
 }
 
 .bring-card:hover {
-  border-color: color-mix(in srgb, var(--color-gold-400) 30%, transparent);
-  background: color-mix(in srgb, var(--color-gold-400) 4%, transparent);
+  background: color-mix(in srgb, var(--accent) 9%, var(--surface));
 }
 
 /* ─── Project card ──────────────────────────────────────────── */
 
 .project-card {
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  background: rgba(9, 14, 24, 0.4);
+  border: 1px solid transparent;
+  background: var(--surface);
   overflow: hidden;
-  transition: border-color 0.25s ease, background 0.25s ease;
+  transition: background 0.25s ease;
 }
 
 .project-card:hover {
-  border-color: rgba(255, 255, 255, 0.12);
-  background: rgba(15, 22, 33, 0.6);
+  background: var(--surface-strong);
 }
 
 /* ─── Keyframes ─────────────────────────────────────────────── */

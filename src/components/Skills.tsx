@@ -26,14 +26,14 @@ export function Skills() {
             >
               <div className="card-accent h-full p-7 md:p-8">
                 <p className="eyebrow">{cat.category}</p>
-                <ul className="mt-6 divide-y divide-white/[0.05]">
+                <ul className="mt-6 divide-y divide-ink-900/8">
                   {cat.skills.map((skill) => (
                     <li
                       key={skill}
                       className="flex items-baseline gap-3 py-3 first:pt-0 last:pb-0"
                     >
-                      <span className="mt-[9px] h-px w-3 shrink-0 bg-gold-400/40" />
-                      <span className="text-[14.5px] leading-[1.7] text-slate-300">
+                      <span className="mt-[9px] h-px w-3 shrink-0 bg-gold-500/70" />
+                      <span className="text-[14.5px] leading-[1.7] text-ink-700">
                         {skill}
                       </span>
                     </li>
@@ -64,9 +64,9 @@ export function Skills() {
 
         {/* Reporting samples placeholder */}
         <Reveal animation="fade-up" className="mt-12">
-          <div className="border border-dashed border-white/[0.08] p-8 text-center">
+          <div className="bg-paper-200 p-8 text-center">
             <p className="eyebrow">Work samples</p>
-            <p className="prose-copy mx-auto mt-3 max-w-md text-slate-600">
+            <p className="prose-copy mx-auto mt-3 max-w-md text-ink-400">
               Product demos, client portals, and campaign creatives — samples
               available on request. Live platforms are linked in the Projects
               section above.

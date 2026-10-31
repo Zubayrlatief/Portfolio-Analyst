@@ -17,7 +17,7 @@ export function SectionHeading({
     <Reveal className="section-heading-block">
       <div className="flex items-baseline gap-4">
         {number && (
-          <span className="text-[10px] font-semibold tracking-[0.22em] text-slate-600">
+          <span className="text-[10px] font-semibold tracking-[0.22em] text-ink-400">
             {number}
           </span>
         )}
