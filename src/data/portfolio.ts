@@ -1,12 +1,12 @@
 export const siteConfig = {
   name: "Zubayr Abdullatif",
-  title: "Founder · B2B SaaS & Technology Sales",
-  sector: "High-Ticket Sales · B2B SaaS · Fintech & Compliance Solutions",
+  title: "Product Engineer · Founder · B2B SaaS & Technology Sales",
+  sector: "Product & Frontend Engineering · B2B SaaS · Fintech & Compliance Solutions",
   location: "Cape Town, South Africa",
   currentRole: "Founder · Zar Media Group",
   credentials: "BCom Information Technology Management · MANCOSA",
   tagline:
-    "Founder selling B2B SaaS to local and international clients — owning the full sales cycle from discovery and demos through negotiation and close, with the technical depth to speak credibly to both commercial stakeholders and engineering teams.",
+    "Product engineer and founder. I build the product and I sell it — Product Engineer for the Governance Portal and Design System at Integrity Architecture, and founder of a B2B SaaS business where I own the full sales cycle from discovery and demos through negotiation and close.",
   email: "business.zubayr@gmail.com",
   phone: "068 507 0088",
   phoneHref: "tel:+27685070088",
@@ -33,11 +33,14 @@ export const navLinks = [
 
 export const aboutParagraphs = [
   "I am the founder of Zar Media Group, a Cape Town software business selling B2B SaaS to local and international clients in the compliance, accounting, and financial services sectors. I own the full sales cycle — prospecting, high-level discovery meetings, product demonstrations, negotiation, and close — and I represent the company directly in the room where deals happen.",
+  "I am also a product engineer, not only a seller. Integrity Architecture lists me on its leadership and delivery team as Product Engineer for the Governance Portal and Design System — I own the portal surfaces operators work in day to day, building enterprise UI and UX for governance workflows such as consent capture, evidence intake, audit trails, and release gating, and I own the design system that drives frontend delivery across the platform.",
   "Beyond the deal, I operate the business end-to-end: I have shipped dozens of client projects while managing expectations, scope, and delivery timelines; I run the marketing function with weekly ad creative production; and I have built secure Azure cloud infrastructure to automate business processes and protect sensitive client documents. Analyst roles at SA Bullion and O'Brien Financial add direct exposure to client-facing reporting and regulated financial environments.",
   "I am completing a BCom in Information and Technology Management at MANCOSA. I am actively seeking high-ticket technology sales roles — B2B SaaS, fintech, or enterprise software — where technical credibility and commercial drive are what close deals.",
 ];
 
 export const whatIBring = [
+  { label: "Product Engineering", detail: "Enterprise portal UI and UX, design systems, and accessible responsive frontend delivery" },
+  { label: "Product Development", detail: "Discovery and requirements through scope, prototyping, release, and iteration" },
   { label: "Full Sales Cycle Ownership", detail: "Prospecting, discovery, demos, negotiation, and close — locally and internationally" },
   { label: "Technical Credibility", detail: "Founder-level product depth; fluent with both buyers and engineering teams" },
   { label: "Marketing & Pipeline", detail: "Weekly ad creative production, campaign management, and lead generation" },
@@ -71,9 +74,23 @@ export const experience: ExperienceItem[] = [
       "Developed and commercialised independent software products for the compliance, accounting, and financial sectors, taking each from concept through to paying clients",
       "Shipped dozens of client projects end-to-end while managing client expectations, scope, and delivery timelines from kickoff to handover",
       "Ran the marketing function, producing weekly ad creatives that sustained audience engagement and fed the sales pipeline",
-      "Provisioned and administered Azure virtual private servers to manage and automate core business processes, cutting manual operational overhead",
-      "Architected fully secure, cloud-based project environments to mitigate the risk of sensitive document leakage for clients in regulated industries",
-      "Delivered a governance and compliance infrastructure platform (Integrity Architecture) — enforcing audit trails, consent workflows, and accountability structures for financial and corporate clients",
+      "Provisioned and administered Azure virtual private servers to automate core business processes, architecting fully secure cloud environments that mitigate sensitive-document leakage risk for clients in regulated industries",
+      "Delivered a doctor-led medical negligence claim assessment platform (Medical Malpractice Claims) — a free case review intake funnel built for a sensitive, high-consideration enquiry across private and public sector matters",
+    ],
+  },
+  {
+    role: "Product Engineer · Governance Portal & Design System",
+    company: "Integrity Architecture",
+    sector: "RegTech · Audit Infrastructure · Enterprise Product",
+    period: "2026 – Present",
+    location: "Cape Town",
+    logo: "/images/employers/integrity-architecture.png",
+    featured: true,
+    highlights: [
+      "Named on the company's leadership and delivery team as Product Engineer, owning the portal surfaces operators work in day to day",
+      "Build enterprise portal UI and UX for governance workflows — consent capture, evidence intake, audit trails, and release gating — as accessible, responsive workflow design across devices",
+      "Own the design system driving frontend delivery, keeping components, typography, and interaction patterns consistent across the public platform and the authenticated portal",
+      "Work the product end-to-end with the commercial side — shaping scope from client discovery through to demonstrating the platform to enterprise prospects",
     ],
   },
   {
@@ -154,12 +171,63 @@ export const projects: ProjectItem[] = [
     relevance: "Financial document and reporting workflow management",
   },
   {
+    name: "iProtect",
+    description:
+      "Asset protection and tax structuring firm — trust and estate planning, deceased estate administration, and B-BBEE structuring presented across a multi-practice services architecture with consultation capture and client portal access.",
+    url: "https://www.iprotect.co.za/",
+    tags: ["Legal", "Tax Structuring", "Advisory"],
+    image: "/images/projects/iprotect.png",
+    relevance: "Regulated advisory firm operating across multiple national offices",
+  },
+  {
+    name: "Medical Malpractice Claims",
+    description:
+      "Doctor-led medical negligence claim assessment service — a free case review intake funnel built for a sensitive, high-consideration enquiry across private and public sector matters.",
+    url: "https://medicalmalpracticeclaims.co.za/",
+    tags: ["Legal", "Medical", "Lead Capture"],
+    image: "/images/projects/medical-malpractice-claims.png",
+    relevance: "Conversion-focused intake for a high-trust professional service",
+  },
+  {
+    name: "Dr Magerman",
+    description:
+      "Family general practice in Cape Town — same-day appointment booking, local SEO structure across five surrounding suburbs, and an operator-controlled notice system for practice hours and service interruptions.",
+    url: "https://www.drmagerman.co.za/",
+    tags: ["Healthcare", "Booking", "Local SEO"],
+    image: "/images/projects/dr-magerman.png",
+  },
+  {
     name: "UrbanLyft",
     description:
       "Corporate transport operations platform — contract-first scheduling, fixed monthly billing, and shift coverage management for enterprise clients.",
     url: "https://www.urbanlyft.co.za/",
     tags: ["Operations", "Enterprise", "Contracts"],
     image: "/images/projects/urbanlyft.png",
+  },
+  {
+    name: "MODULUX",
+    description:
+      "Modular and prefabricated housing manufacturer — a filterable design catalogue with pricing, display village and finance pathways funnelling into quote enquiry.",
+    url: "https://www.modulux.co.za/",
+    tags: ["Manufacturing", "Catalogue", "Lead Generation"],
+    image: "/images/projects/modulux.png",
+  },
+  {
+    name: "CSuits",
+    description:
+      "Menswear e-commerce storefront — full checkout with card, Apple Pay, Instant EFT and Capitec Pay, WhatsApp-based sizing, group-order discounting, and tracked nationwide delivery.",
+    url: "https://csuits.co.za/",
+    tags: ["E-commerce", "Retail", "Payments"],
+    image: "/images/projects/csuits.png",
+    relevance: "Own brand — built, merchandised, and operated end-to-end",
+  },
+  {
+    name: "In the Public's Interest",
+    description:
+      "Non-profit home-based nursing and community feeding scheme run with the Department of Health — area-routed nurse contact across six service zones, private care enquiries, and recurring donor pathways.",
+    url: "https://inthepublicsinterest.org/",
+    tags: ["Non-Profit", "Healthcare", "Community"],
+    image: "/images/projects/in-the-publics-interest.png",
   },
   {
     name: "Zar Media Group",
@@ -191,6 +259,27 @@ export const skillCategories: SkillCategory[] = [
     ],
   },
   {
+    category: "Product & Frontend Engineering",
+    type: "primary",
+    skills: [
+      "React & Next.js",
+      "TypeScript",
+      "Design Systems",
+      "UI/UX & Accessibility",
+      "Responsive Workflow Design",
+    ],
+  },
+  {
+    category: "Product Development",
+    type: "primary",
+    skills: [
+      "Discovery & Requirements",
+      "Scope & Roadmap",
+      "Prototyping",
+      "Release & Iteration",
+    ],
+  },
+  {
     category: "Marketing & Growth",
     type: "primary",
     skills: [
@@ -201,7 +290,7 @@ export const skillCategories: SkillCategory[] = [
     ],
   },
   {
-    category: "Technical",
+    category: "Data & Infrastructure",
     type: "secondary",
     skills: [
       "Azure Cloud Infrastructure",
