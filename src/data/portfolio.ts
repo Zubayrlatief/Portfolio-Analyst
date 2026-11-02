@@ -222,6 +222,15 @@ export const projects: ProjectItem[] = [
     relevance: "Own brand — built, merchandised, and operated end-to-end",
   },
   {
+    name: "The Car Bath",
+    description:
+      "Mobile and on-site car valeting and detailing in Cape Town — a booking-first site with flat pricing across cars, bakkies and SUVs, and an interactive paint-correction demo that lets a visitor drag the swirl marks off a bonnet before they book.",
+    url: "https://thecarbath.co.za/",
+    tags: ["Service Business", "Booking", "Interactive"],
+    image: "/images/projects/the-car-bath.png",
+    relevance: "Interactive product demo built to convert on the page",
+  },
+  {
     name: "In the Public's Interest",
     description:
       "Non-profit home-based nursing and community feeding scheme run with the Department of Health — area-routed nurse contact across six service zones, private care enquiries, and recurring donor pathways.",
